@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btSocialShareLite">
+		<field name="bID" type="I"><key /><unsigned /></field>
+		<field name="fblike" type="I1" ></field>
+		<field name="tweet" type="I1" ></field>
+		<field name="gplus" type="I1" ></field>
+		<field name="bhatena" type="I1" ></field>
+	</table>
+</schema>

@@ -1,0 +1,10 @@
+.social-share {
+  margin: 10px;
+}
+.social-share .fb_iframe_widget {
+  margin-right: 20px;
+}
+.social-share .twitter-count-horizontal {
+  width: 110px !important;
+  overflow: hidden;
+}
