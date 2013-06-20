@@ -17,3 +17,8 @@ Add social sharing buttons to your concrete5 site.
 * Hatena Bookmark (famous social bookmarking service in japan)
 
 other services, under consideration.
+
+## Install
+
+* Download Zip and unzip
+* Upload social_share_lite folder to package directory
