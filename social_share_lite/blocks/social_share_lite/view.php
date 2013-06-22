@@ -43,6 +43,38 @@ if($bhatena){ ?>
 <a href="http://b.hatena.ne.jp/entry/<?php echo BASE_URL . $th->specialchars($url); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="<?php echo LANGUAGE; ?>" title="<?php echo t('Add this entry to hatena bookmark');?>"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="<?php echo t('Add this entry to hatena bookmark');?>" width="20" height="20" style="border: none;" /></a><?php
 }
 
+/**
+ * Share Button from Tumblr
+ * get another code: http://www.tumblr.com/buttons
+ */
+if($tumblr){ ?>
+<a href="http://www.tumblr.com/share" title="<?php echo t('Share on Tumblr'); ?>" class="tumblr-button"><?php echo t('Share on Tumblr'); ?></a><?php
+}
+
+/**
+ * Pin It button from Pinterest
+ * get another code: http://business.pinterest.com/widget-builder/#do_pin_it_button
+ */
+if($pinterest){ ?>
+<a href="//pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a><span class="social-share-spacer"></span><?php
+}
+
+/**
+ * Share Button from LinkedIn
+ * get another code: http://developer.linkedin.com/plugins/share-plugin-generator
+ */
+if($linkedin){ ?>
+<script type="IN/Share" data-url="<?php echo BASE_URL . $th->specialchars($url); ?>" data-counter="right"></script><?php
+}
+
+/**
+ * Pocket Button from Pocket
+ * get another code: http://getpocket.com/publisher/button
+ */
+if($pocket){ ?>
+<a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="<?php echo LANGUAGE; ?>"></a><?php
+}
+
 echo '</div>';
 
 }

@@ -6,5 +6,9 @@
 		<field name="tweet" type="I1" ></field>
 		<field name="gplus" type="I1" ></field>
 		<field name="bhatena" type="I1" ></field>
+		<field name="tumblr" type="I1" ></field>
+		<field name="pinterest" type="I1" ></field>
+		<field name="linkedin" type="I1" ></field>
+		<field name="pocket" type="I1" ></field>
 	</table>
 </schema>

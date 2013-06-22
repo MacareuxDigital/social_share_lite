@@ -1,10 +1,6 @@
-.social-share {
-  margin: 10px;
-}
-.social-share .fb_iframe_widget {
-  margin-right: 20px;
-}
-.social-share .twitter-count-horizontal {
-  width: 110px !important;
-  overflow: hidden;
-}
+.social-share { margin: 10px; }
+.social-share .fb_iframe_widget, .social-share .hatena-bookmark-button-frame, .social-share .tumblr-button, .social-share .IN-widget { margin-right: 10px; }
+.social-share .twitter-count-horizontal { width: 100px !important; overflow: hidden; }
+.social-share .tumblr-button { display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent; vertical-align: top; }
+.social-share .pocket-btn { display: inline-block; }
+.social-share-spacer { display: inline-block; width: 10px; height: 20px; }

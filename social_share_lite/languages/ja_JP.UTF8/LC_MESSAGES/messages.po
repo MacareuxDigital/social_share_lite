@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Social Share Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-20 13:29+0900\n"
-"PO-Revision-Date: 2013-06-20 13:29+0900\n"
+"POT-Creation-Date: 2013-06-22 17:06+0900\n"
+"PO-Revision-Date: 2013-06-22 17:08+0900\n"
 "Last-Translator: Takuro Hishikawa <hishikawa@concrete5.co.jp>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -34,20 +34,36 @@ msgid "Select to display."
 msgstr "表示するものを選択してください。"
 
 #: ../../../blocks/social_share_lite/edit.php:6
-msgid "Facebook Like"
+msgid "Facebook's Like"
 msgstr "Facebook いいね"
 
 #: ../../../blocks/social_share_lite/edit.php:12
-msgid "Twitter Tweet"
+msgid "Twitter's Tweet"
 msgstr "Twitter ツイート"
 
 #: ../../../blocks/social_share_lite/edit.php:18
-msgid "Google+ plus one"
+msgid "Google+'s plus one"
 msgstr "Google+ プラス1"
 
 #: ../../../blocks/social_share_lite/edit.php:24
 msgid "Hatena bookmark"
 msgstr "はてなブックマーク"
+
+#: ../../../blocks/social_share_lite/edit.php:30
+msgid "Tumblr's Share"
+msgstr "Tumblr シェア"
+
+#: ../../../blocks/social_share_lite/edit.php:36
+msgid "Pinterest's Pin it"
+msgstr "Pinterest Pin it ボタン"
+
+#: ../../../blocks/social_share_lite/edit.php:42
+msgid "LinkedIn's Share"
+msgstr "LinkedIn シェア"
+
+#: ../../../blocks/social_share_lite/edit.php:48
+msgid "Pocket Button"
+msgstr "Pocket ボタン"
 
 #: ../../../blocks/social_share_lite/view.php:8
 msgid "Sosial share buttons disabled in edit mode."
@@ -60,3 +76,7 @@ msgstr "ツイートする"
 #: ../../../blocks/social_share_lite/view.php:43
 msgid "Add this entry to hatena bookmark"
 msgstr "このエントリーをはてなブックマークに追加"
+
+#: ../../../blocks/social_share_lite/view.php:51
+msgid "Share on Tumblr"
+msgstr "Tumblrでシェア"
