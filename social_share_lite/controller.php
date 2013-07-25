@@ -5,7 +5,7 @@ class SocialShareLitePackage extends Package {
 
 	protected $pkgHandle = 'social_share_lite';
 	protected $appVersionRequired = '5.6.0';
-	protected $pkgVersion = '0.2';
+	protected $pkgVersion = '0.2.1';
 	
 	public function getPackageDescription() {
 		return t("Add social sharing buttons");

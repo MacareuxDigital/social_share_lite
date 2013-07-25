@@ -59,7 +59,7 @@ class SocialShareLiteBlockController extends BlockController {
 				if($fb_admin) $app_id = '&appID='.$fb_admin;
 			}
 			$this->addFooterItem('<div id="fb-root"></div>');
-			$this->addFooterItem($this->script('//connect.facebook.net/ja_JP/all.js#xfbml=1'.$app_id,'facebook-jssdk'));
+			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/all.js#xfbml=1'.$app_id,'facebook-jssdk'));
 		}
 		
 		// Twitter widgets.js
@@ -92,16 +92,8 @@ class SocialShareLiteBlockController extends BlockController {
 		
 		// Linkedin in.js
 		if($this->linkedin){
-			if (strpos(ACTIVE_LOCALE, '.') > -1) {
-				$loc = explode('.', ACTIVE_LOCALE);
-				if (is_array($loc) && count($loc) == 2) {
-					$locale = $loc[0];
-				}
-			} else {
-				$locale = ACTIVE_LOCALE;
-			}
 			$this->addFooterItem('<script src="//platform.linkedin.com/in.js" type="text/javascript">
- lang: ' . $locale . '
+ lang: '.$this->getLocale().'
 </script>');
 		}
 		
@@ -119,6 +111,20 @@ class SocialShareLiteBlockController extends BlockController {
 		$handle = $th->specialchars($handle);
 		
 		return '<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="'.$src.'";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","'.$handle.'");</script>';
+	}
+	
+	protected function getLocale() {
+		$localization = Localization::getInstance();
+		$locale = $localization->getLocale();
+		
+		// remove charset like as utf8 from locale string
+		if (strpos($locale, '.') > -1) {
+			$loc = explode('.', $locale);
+			if (is_array($loc) && count($loc) == 2) {
+				$locale = $loc[0];
+			}
+		}
+		return $locale;
 	}
 
 }
