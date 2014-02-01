@@ -80,3 +80,7 @@ msgstr "このエントリーをはてなブックマークに追加"
 #: ../../../blocks/social_share_lite/view.php:51
 msgid "Share on Tumblr"
 msgstr "Tumblrでシェア"
+
+#: blocks/social_share_lite/edit.php:54
+msgid "LINE Button"
+msgstr "LINEで送る"

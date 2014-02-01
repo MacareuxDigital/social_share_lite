@@ -42,6 +42,7 @@ class SocialShareLiteBlockController extends BlockController {
 		$args['pinterest'] = empty($args['pinterest']) ? 0 : 1;
 		$args['linkedin'] = empty($args['linkedin']) ? 0 : 1;
 		$args['pocket'] = empty($args['pocket']) ? 0 : 1;
+		$args['line'] = empty($args['line']) ? 0 : 1;
 		parent::save($args);
 	}
 	
