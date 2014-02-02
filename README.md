@@ -20,6 +20,7 @@ Add social sharing buttons to your concrete5 site.
 * Pinterest Pin it
 * LinkedIn Share
 * Pocket button
+* LINE (famous social network service in japan)
 
 ## Install
 

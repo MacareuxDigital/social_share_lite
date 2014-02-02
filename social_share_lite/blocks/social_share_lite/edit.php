@@ -50,5 +50,11 @@
 				<?php  echo $form->checkbox('pocket', 1, $pocket); ?>
 			</div>
 		</div>
+		<div class="control-group">
+			<?php	echo $form->label('line', t('LINE Button'))?>
+			<div class="controls">
+				<?php  echo $form->checkbox('line', 1, $line); ?>
+			</div>
+		</div>
 	</fieldset>
 </div>

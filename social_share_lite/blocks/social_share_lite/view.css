@@ -4,3 +4,4 @@
 .social-share .tumblr-button { display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent; vertical-align: top; }
 .social-share .pocket-btn { display: inline-block; }
 .social-share-spacer { display: inline-block; width: 10px; height: 20px; }
+.social-share .line img { vertical-align: top; }
