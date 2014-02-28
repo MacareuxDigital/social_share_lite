@@ -80,7 +80,7 @@ if($pocket){ ?>
  * get another code: http://media.line.me/howto/en/
  */
 if($line){ ?>
-<span class="line"><script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140127" ></script><script type="text/javascript">new media_line_me.LineButton({"pc":true,"lang":"ja","type":"a"});</script></span><?php
+<span class="line"><script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140127" ></script><script type="text/javascript">new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});</script></span><?php
 }
 
 echo '</div>';
