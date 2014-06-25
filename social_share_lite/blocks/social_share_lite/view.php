@@ -5,7 +5,7 @@ $page = Page::getCurrentPage();
 $url = $nh->getLinkToCollection($page);
 
 if($page->isEditMode()) { ?>
-<div class="ccm-edit-mode-disabled-item"><?php echo t('Sosial share buttons disabled in edit mode.');?></div>
+<div class="ccm-edit-mode-disabled-item"><?php echo t('Social share buttons disabled in edit mode.');?></div>
 <?php
 } else {
 
