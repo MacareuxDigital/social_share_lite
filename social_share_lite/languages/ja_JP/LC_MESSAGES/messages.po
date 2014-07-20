@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Social Share Lite 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-20 09:15+0900\n"
-"PO-Revision-Date: 2014-07-20 09:46+0900\n"
+"PO-Revision-Date: 2014-07-20 09:49+0900\n"
 "Last-Translator: Takuro Hishikawa <hishikawa@concrete5.co.jp>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -107,16 +107,20 @@ msgid ""
 "Add scripts if social share lite blocks are placed on the particular page "
 "(default)."
 msgstr ""
+"ソーシャルシェア・ライトブロックが特定のページに存在する時はスクリプトを追加"
+"（デフォルト）。"
 
 #: ../../../single_pages/dashboard/system/social_share_lite/settings.php:19
 msgid "Do not add scripts of social network api automatically."
-msgstr ""
+msgstr "ソーシャルネットワークAPIのスクリプトを自動で追加しない。"
 
 #: ../../../single_pages/dashboard/system/social_share_lite/settings.php:21
 msgid ""
 "If you want to load javascript files (Twitter widgets.js or Google plusone."
 "js) into your theme manually, please choose second option."
 msgstr ""
+"Javascriptファイル（Twitter widgets.js や Google plusone.js）をテーマから手動"
+"で読み込みたい場合は、2つめのオプションを選択してください。"
 
 #: ../../../single_pages/dashboard/system/social_share_lite/settings.php:27
 msgid "Save"
