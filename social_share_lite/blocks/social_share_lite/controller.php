@@ -31,6 +31,17 @@ class SocialShareLiteBlockController extends BlockController {
 			$this->set('twitter_site',$twitter_site);
 			$this->set('ogt',$pkg);
 		}
+		
+		$nh = Loader::helper('navigation');
+		$th = Loader::helper('text');
+		$this->set('nh',$nh);
+		$this->set('th',$th);
+		
+		$page = Page::getCurrentPage();
+		$url = $nh->getLinkToCollection($page,true);
+		$this->set('url',$url);
+		
+		$this->set('language',LANGUAGE);
 	}
 
 	public function save($args) {
@@ -47,6 +58,13 @@ class SocialShareLiteBlockController extends BlockController {
 	}
 	
 	public function on_page_view() {
+		
+		$co = new Config();
+		$co->setPackageObject(Package::getByHandle('social_share_lite'));
+		$disable_scripts = $co->get('DISABLE_SCRIPTS');
+		if ($disable_scripts) {
+			return;
+		}
 	
 		// Facebook SDK
 		if($this->fblike){
