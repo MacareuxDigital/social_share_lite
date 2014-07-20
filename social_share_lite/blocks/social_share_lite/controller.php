@@ -103,6 +103,12 @@ class SocialShareLiteBlockController extends BlockController {
 			$this->addFooterItem($this->script('https://widgets.getpocket.com/v1/j/btn.js?v=1','pocket-btn-js'));
 		}
 		
+		// LINE
+		if($this->line){
+			$html = Loader::helper('html');
+			$this->addHeaderItem($html->javascript('//media.line.me/js/line-button.js?v=20140411'));
+		}
+		
 		$this->addFooterItem('<!-- load social scripts by social share lite add-on -->');
 	}
 	
