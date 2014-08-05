@@ -1,4 +1,5 @@
 <?php  defined('C5_EXECUTE') or die("Access Denied.");
+$page = Page::getCurrentPage();
 
 if($page->isEditMode()) { ?>
 <div class="ccm-edit-mode-disabled-item"><?php echo t('Social share buttons disabled in edit mode.');?></div>
