@@ -58,6 +58,7 @@ class SocialShareLiteBlockController extends BlockController {
 	}
 	
 	public function on_page_view() {
+		$th = Loader::helper('text');
 		
 		$co = new Config();
 		$co->setPackageObject(Package::getByHandle('social_share_lite'));
@@ -75,10 +76,10 @@ class SocialShareLiteBlockController extends BlockController {
 				$co = new Config();
 				$co->setPackageObject($pkg);
 				$fb_admin = $co->get('FB_APP_ID');
-				if($fb_admin) $app_id = '&appID='.$fb_admin;
+				if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
 			}
 			$this->addFooterItem('<div id="fb-root"></div>');
-			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/sdk.js#xfbml=1&amp;version=v2.0'.$app_id,'facebook-jssdk'));
+			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/sdk.js#xfbml=1&version=v2.0'.$app_id,'facebook-jssdk'));
 		}
 		
 		// Twitter widgets.js
@@ -89,7 +90,7 @@ class SocialShareLiteBlockController extends BlockController {
 		// Google plugone.js
 		if($this->gplus){
 			$this->addFooterItem('<script type="text/javascript">
-  window.___gcfg = {lang: "' . LANGUAGE . '"};
+  window.___gcfg = {lang: "' . $th->specialchars(LANGUAGE) . '"};
 </script>');
 			$this->addFooterItem($this->script('https://apis.google.com/js/plusone.js','google-plusone'));
 		}
@@ -112,7 +113,7 @@ class SocialShareLiteBlockController extends BlockController {
 		// Linkedin in.js
 		if($this->linkedin){
 			$this->addFooterItem('<script src="//platform.linkedin.com/in.js" type="text/javascript">
- lang: '.$this->getLocale().'
+ lang: '.$th->specialchars($this->getLocale()).'
 </script>');
 		}
 		
@@ -131,10 +132,6 @@ class SocialShareLiteBlockController extends BlockController {
 	}
 	
 	protected function script($src,$handle) {
-		$th = Loader::helper('text');
-		$src = $th->specialchars($src);
-		$handle = $th->specialchars($handle);
-		
 		return '<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="'.$src.'";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","'.$handle.'");</script>';
 	}
 	
