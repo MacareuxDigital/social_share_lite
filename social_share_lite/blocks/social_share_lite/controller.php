@@ -1,6 +1,14 @@
-<?php  defined('C5_EXECUTE') or die("Access Denied.");
+<?php
+namespace Concrete\Package\SocialShareLite\Block\SocialShareLite;
 
-class SocialShareLiteBlockController extends BlockController {
+use Concrete\Core\Block\BlockController;
+use Package;
+use Core;
+use Page;
+use Localization;
+use Loader;
+
+class Controller extends BlockController {
 	
 	public function getBlockTypeDescription() {
 		return t('Add social sharing buttons');
@@ -25,15 +33,13 @@ class SocialShareLiteBlockController extends BlockController {
 		// Get Open Graph Tags Lite settings
 		$pkg = Package::getByHandle('open_graph_tags_lite');
 		if($pkg){
-			$co = new Config();
-			$co->setPackageObject($pkg);
-			$twitter_site = $co->get('TWITTER_SITE');
+			$twitter_site = $pkg->getConfig()->get('concrete.ogp.twitter_site');
 			$this->set('twitter_site',$twitter_site);
 			$this->set('ogt',$pkg);
 		}
 		
-		$nh = Loader::helper('navigation');
-		$th = Loader::helper('text');
+		$nh = Core::make('helper/navigation');
+		$th = Core::make('helper/text');
 		$this->set('nh',$nh);
 		$this->set('th',$th);
 		
@@ -41,7 +47,7 @@ class SocialShareLiteBlockController extends BlockController {
 		$url = $nh->getLinkToCollection($page,true);
 		$this->set('url',$url);
 		
-		$this->set('language',LANGUAGE);
+		$this->set('language', Localization::activeLanguage());
 	}
 
 	public function save($args) {
@@ -58,11 +64,10 @@ class SocialShareLiteBlockController extends BlockController {
 	}
 	
 	public function on_page_view() {
-		$th = Loader::helper('text');
+		$th = Core::make('helper/text');
 		
-		$co = new Config();
-		$co->setPackageObject(Package::getByHandle('social_share_lite'));
-		$disable_scripts = $co->get('DISABLE_SCRIPTS');
+		$pkg = Package::getByHandle('social_share_lite');
+		$disable_scripts = $pkg->getConfig()->get('concrete.sharing.disable_scripts');
 		if ($disable_scripts) {
 			return;
 		}
@@ -73,13 +78,11 @@ class SocialShareLiteBlockController extends BlockController {
 			$app_id = '';
 			$pkg = Package::getByHandle('open_graph_tags_lite');
 			if($pkg){
-				$co = new Config();
-				$co->setPackageObject($pkg);
-				$fb_admin = $co->get('FB_APP_ID');
+				$fb_admin = $pkg->getConfig()->get('concrete.ogp.fb_app_id');
 				if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
 			}
 			$this->addFooterItem('<div id="fb-root"></div>');
-			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/sdk.js#xfbml=1&version=v2.0'.$app_id,'facebook-jssdk'));
+			$this->addFooterItem($this->script('//connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v2.0'.$app_id,'facebook-jssdk'));
 		}
 		
 		// Twitter widgets.js
@@ -90,7 +93,7 @@ class SocialShareLiteBlockController extends BlockController {
 		// Google plugone.js
 		if($this->gplus){
 			$this->addFooterItem('<script type="text/javascript">
-  window.___gcfg = {lang: "' . $th->specialchars(LANGUAGE) . '"};
+  window.___gcfg = {lang: "' . $th->specialchars(Localization::activeLanguage()) . '"};
 </script>');
 			$this->addFooterItem($this->script('https://apis.google.com/js/plusone.js','google-plusone'));
 		}
@@ -113,7 +116,7 @@ class SocialShareLiteBlockController extends BlockController {
 		// Linkedin in.js
 		if($this->linkedin){
 			$this->addFooterItem('<script src="//platform.linkedin.com/in.js" type="text/javascript">
- lang: '.$th->specialchars($this->getLocale()).'
+ lang: '.Localization::activeLocale().'
 </script>');
 		}
 		
@@ -133,20 +136,6 @@ class SocialShareLiteBlockController extends BlockController {
 	
 	protected function script($src,$handle) {
 		return '<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="'.$src.'";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","'.$handle.'");</script>';
-	}
-	
-	protected function getLocale() {
-		$localization = Localization::getInstance();
-		$locale = $localization->getLocale();
-		
-		// remove charset like as utf8 from locale string
-		if (strpos($locale, '.') > -1) {
-			$loc = explode('.', $locale);
-			if (is_array($loc) && count($loc) == 2) {
-				$locale = $loc[0];
-			}
-		}
-		return $locale;
 	}
 
 }

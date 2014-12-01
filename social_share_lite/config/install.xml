@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
+    <blocktypes>
+        <blocktype handle="social_share_lite" package="social_share_lite"/>
+    </blocktypes>
     <singlepages>
         <page name="Social Share Lite" path="/dashboard/system/social_share_lite" filename="/dashboard/system/social_share_lite/view.php" pagetype="" description="" package="social_share_lite"></page>
         <page name="Settings" path="/dashboard/system/social_share_lite/settings" filename="/dashboard/system/social_share_lite/settings.php" pagetype="" description="" package="social_share_lite"></page>
