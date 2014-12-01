@@ -1,20 +1,18 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
-<?php echo Loader::helper('concrete/dashboard')->getDashboardPaneHeaderWrapper(t('Social Share Lite'),'', 'span10 offset1', false); ?>
-<form method="post" id="site-form" action="<?php echo $this->action('save_settings'); ?>" class="form-horizontal">
+
+<form method="post" action="<?php echo $this->action('save_settings'); ?>">
 
 <?php echo $this->controller->token->output('save_settings'); ?>
 
-<div class="ccm-pane-body">
 	<fieldset>
-		<legend><?php echo t('Developers option')?></legend>
-		<div class="control-group">
-			<?php echo $form->label('disable_scripts', t('Load scripts'))?>
+		<legend><?php echo t('Load scripts')?></legend>
+		<div class="form-group">
 			<div class="controls">
-				<label class="radio">
+				<label>
 					<?php echo $form->radio('disable_scripts', 0, $disable_scripts); ?>
 					<?php echo t('Add scripts if social share lite blocks are placed on the particular page (default).') ?>
 				</label>
-				<label class="radio">
+				<label>
 					<?php echo $form->radio('disable_scripts', 1, $disable_scripts); ?>
 					<?php echo t('Do not add scripts of social network api automatically.') ?>
 				</label>
@@ -22,10 +20,10 @@
 			</div>
 		</div>
 	</fieldset>
-</div>
-<div class="ccm-pane-footer">
-	<?php print $interface->submit(t('Save'), 'site-form', 'right', 'primary'); ?>
-</div>
+    <div class="ccm-dashboard-form-actions-wrapper">
+    <div class="ccm-dashboard-form-actions">
+        <button class="pull-right btn btn-success" type="submit" ><?php echo t('Save')?></button>
+    </div>
+    </div>
 
 </form>
-<?php echo Loader::helper('concrete/dashboard')->getDashboardPaneFooterWrapper(false); ?>

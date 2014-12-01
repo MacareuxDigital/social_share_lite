@@ -5,6 +5,6 @@
     </blocktypes>
     <singlepages>
         <page name="Social Share Lite" path="/dashboard/system/social_share_lite" filename="/dashboard/system/social_share_lite/view.php" pagetype="" description="" package="social_share_lite"></page>
-        <page name="Settings" path="/dashboard/system/social_share_lite/settings" filename="/dashboard/system/social_share_lite/settings.php" pagetype="" description="" package="social_share_lite"></page>
+        <page name="Developers option" path="/dashboard/system/social_share_lite/settings" filename="/dashboard/system/social_share_lite/settings.php" pagetype="" description="" package="social_share_lite"></page>
     </singlepages>
 </concrete5-cif>
