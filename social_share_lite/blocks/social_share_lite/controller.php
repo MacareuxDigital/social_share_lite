@@ -6,7 +6,6 @@ use Package;
 use Core;
 use Page;
 use Localization;
-use Loader;
 
 class Controller extends BlockController {
 	
@@ -127,7 +126,7 @@ class Controller extends BlockController {
 		
 		// LINE
 		if($this->line){
-			$html = Loader::helper('html');
+			$html = Core::make('helper/html');
 			$this->addHeaderItem($html->javascript('//media.line.me/js/line-button.js?v=20140411'));
 		}
 		
