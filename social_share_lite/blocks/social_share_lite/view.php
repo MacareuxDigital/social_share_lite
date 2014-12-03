@@ -1,5 +1,4 @@
 <?php  defined('C5_EXECUTE') or die("Access Denied.");
-$page = Page::getCurrentPage();
 
 if($page->isEditMode()) { ?>
 <div class="ccm-edit-mode-disabled-item"><?php echo t('Social share buttons disabled in edit mode.');?></div>
@@ -15,7 +14,7 @@ echo '<ul>';
  */
 if($fblike){ ?>
 <li class="fblike">
-<div class="fb-like" data-href="<?php echo $th->specialchars($url); ?>" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+<div class="fb-like" data-href="<?php echo h($url); ?>" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
 </li><?php
 }
 
@@ -25,7 +24,7 @@ if($fblike){ ?>
  */
 if($tweet){ ?>
 <li class="tweet">
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $th->specialchars($url); ?>" data-lang="<?php echo $th->specialchars($language); ?>"<?php if(isset($twitter_site) && !empty($twitter_site)){?> data-via="<?php echo $th->specialchars($twitter_site); ?>"<?php }?>><?php echo t('Tweet'); ?></a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo h($url); ?>" data-lang="<?php echo h($language); ?>"<?php if(isset($twitter_site) && !empty($twitter_site)){?> data-via="<?php echo h($twitter_site); ?>"<?php }?>><?php echo t('Tweet'); ?></a>
 </li><?php
 }
 
@@ -35,7 +34,7 @@ if($tweet){ ?>
  */
 if($gplus){ ?>
 <li class="gplus">
-<div class="g-plusone" data-size="medium" data-href="<?php echo $th->specialchars($url); ?>"></div>
+<div class="g-plusone" data-size="medium" data-href="<?php echo h($url); ?>"></div>
 </li><?php
 }
 
@@ -45,7 +44,7 @@ if($gplus){ ?>
  */
 if($bhatena){ ?>
 <li class="bhatena">
-<a href="http://b.hatena.ne.jp/entry/<?php echo $th->specialchars($url); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="<?php echo $th->specialchars($language); ?>" title="<?php echo t('Add this entry to hatena bookmark');?>"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="<?php echo t('Add this entry to hatena bookmark');?>" width="20" height="20" style="border: none;" /></a>
+<a href="http://b.hatena.ne.jp/entry/<?php echo h($url); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="<?php echo h($language); ?>" title="<?php echo t('Add this entry to hatena bookmark');?>"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="<?php echo t('Add this entry to hatena bookmark');?>" width="20" height="20" style="border: none;" /></a>
 </li><?php
 }
 
@@ -75,7 +74,7 @@ if($pinterest){ ?>
  */
 if($linkedin){ ?>
 <li class="linkedin">
-<script type="IN/Share" data-url="<?php echo $th->specialchars($url); ?>" data-counter="right"></script>
+<script type="IN/Share" data-url="<?php echo h($url); ?>" data-counter="right"></script>
 </li><?php
 }
 
@@ -85,7 +84,7 @@ if($linkedin){ ?>
  */
 if($pocket){ ?>
 <li class="pocket">
-<a data-pocket-label="pocket" data-pocket-count="horizontal" data-save-url="<?php echo $th->specialchars($url); ?>" class="pocket-btn" data-lang="<?php echo $th->specialchars($language); ?>"></a>
+<a data-pocket-label="pocket" data-pocket-count="horizontal" data-save-url="<?php echo h($url); ?>" class="pocket-btn" data-lang="<?php echo h($language); ?>"></a>
 </li><?php
 }
 
@@ -95,7 +94,7 @@ if($pocket){ ?>
  */
 if($line){ ?>
 <li class="line">
-<span><script type="text/javascript">new media_line_me.LineButton({"pc":false,"lang":"<?php echo $th->specialchars($language); ?>","type":"a","text":"<?php echo $th->specialchars($url); ?>","withUrl":true});</script></span>
+<span><script type="text/javascript">new media_line_me.LineButton({"pc":false,"lang":"<?php echo h($language); ?>","type":"a","text":"<?php echo h($url); ?>","withUrl":true});</script></span>
 </li><?php
 }
 

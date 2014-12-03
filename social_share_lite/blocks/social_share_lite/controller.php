@@ -38,15 +38,16 @@ class Controller extends BlockController {
 		}
 		
 		$nh = Core::make('helper/navigation');
-		$th = Core::make('helper/text');
 		$this->set('nh',$nh);
-		$this->set('th',$th);
 		
 		$page = Page::getCurrentPage();
+		$this->set('page',$page);
+		
 		$url = $nh->getLinkToCollection($page,true);
 		$this->set('url',$url);
 		
-		$this->set('language', Localization::activeLanguage());
+		$language = Localization::activeLanguage();
+		$this->set('language', $language);
 	}
 
 	public function save($args) {
