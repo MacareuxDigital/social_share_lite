@@ -11,7 +11,7 @@ class Controller extends BlockController
 {
     protected $btTable = 'btSocialShareLite';
     protected $btInterfaceWidth = "350";
-    protected $btInterfaceHeight = "450";
+    protected $btInterfaceHeight = "350";
     protected $btWrapperClass = 'ccm-ui';
     protected $btCacheBlockRecord = true;
     protected $btCacheBlockOutput = true;
