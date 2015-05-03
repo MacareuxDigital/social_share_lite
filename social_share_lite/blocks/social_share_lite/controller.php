@@ -79,7 +79,7 @@ class SocialShareLiteBlockController extends BlockController {
 				if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
 			}
 			$this->addFooterItem('<div id="fb-root"></div>');
-			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/sdk.js#xfbml=1&version=v2.0'.$app_id,'facebook-jssdk'));
+			$this->addFooterItem($this->script('//connect.facebook.net/'.$this->getLocale().'/sdk.js#xfbml=1&version=v2.3'.$app_id,'facebook-jssdk'));
 		}
 		
 		// Twitter widgets.js
