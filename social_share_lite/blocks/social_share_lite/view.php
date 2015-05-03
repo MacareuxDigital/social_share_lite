@@ -15,7 +15,7 @@ echo '<ul>';
  */
 if($fblike){ ?>
 <li class="fblike">
-<div class="fb-like" data-href="<?php echo $th->specialchars($url); ?>" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+<div class="fb-like" data-href="<?php echo $th->specialchars($url); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 </li><?php
 }
 
