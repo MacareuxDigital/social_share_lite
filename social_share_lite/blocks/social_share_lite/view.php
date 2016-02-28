@@ -54,8 +54,8 @@ if($bhatena){ ?>
  */
 if($tumblr){ ?>
 <li class="tumblr">
-<a href="http://www.tumblr.com/share" title="<?php echo t('Share on Tumblr'); ?>" class="tumblr-button"><?php echo t('Share on Tumblr'); ?></a>
-</li><?php
+<a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+</li><?php 
 }
 
 /**
