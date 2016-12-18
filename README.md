@@ -15,17 +15,21 @@ Add social sharing buttons to your concrete5 site.
 * Facebook Like
 * Twitter Tweet
 * Google plus one
-* Hatena Bookmark (famous social bookmarking service in japan)
+* Hatena Bookmark (famous social bookmarking service in Japan)
 * Tumblr Share
 * Pinterest Pin it
 * LinkedIn Share
 * Pocket button
-* LINE (famous social network service in japan)
+* LINE (famous social network service in Asia)
 
 ## Install
 
-* Download Zip and unzip
-* Upload social_share_lite folder to package directory
+```bash
+$ cd ./packages
+$ git clone git@github.com:hissy/social_share_lite.git
+$ cd ../
+$ ./concrete/bin/concrete5 c5:package-install social_share_lite
+```
 
 ## License
 
