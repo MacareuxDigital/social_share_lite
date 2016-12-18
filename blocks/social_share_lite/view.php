@@ -10,27 +10,27 @@ echo '<ul>';
 
 /**
  * Like Button from Facebook
- * get another code: https://developers.facebook.com/docs/reference/plugins/like/
+ * @link https://developers.facebook.com/docs/plugins/share-button
  */
 if($fblike){ ?>
 <li class="fblike">
-<div class="fb-like" data-href="<?php echo h($url); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+<div class="fb-share-button" data-href="<?php echo h($url); ?>" data-layout="button_count"></div>
 </li><?php
 }
 
 /**
  * Tweet Button from Twitter
- * get another code: https://dev.twitter.com/docs/tweet-button
+ * @link https://dev.twitter.com/web/tweet-button
  */
 if($tweet){ ?>
 <li class="tweet">
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo h($url); ?>" data-lang="<?php echo h($language); ?>"<?php if(isset($twitter_site) && !empty($twitter_site)){?> data-via="<?php echo h($twitter_site); ?>"<?php }?>><?php echo t('Tweet'); ?></a>
+<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-url="<?php echo h($url); ?>" data-lang="<?php echo h($language); ?>"<?php if(isset($twitter_site) && !empty($twitter_site)){?> data-via="<?php echo h($twitter_site); ?>"<?php }?>><?php echo t('Tweet'); ?></a>
 </li><?php
 }
 
 /**
  * Google plus Button from Google
- * get another code: https://developers.google.com/+/web/+1button/
+ * @link https://developers.google.com/+/web/+1button/
  */
 if($gplus){ ?>
 <li class="gplus">
@@ -40,7 +40,7 @@ if($gplus){ ?>
 
 /**
  * Hatena bookmark Button from Hatena
- * get another code: http://b.hatena.ne.jp/guide/bbutton
+ * @link http://b.hatena.ne.jp/guide/bbutton
  */
 if($bhatena){ ?>
 <li class="bhatena">
@@ -50,7 +50,7 @@ if($bhatena){ ?>
 
 /**
  * Share Button from Tumblr
- * get another code: http://www.tumblr.com/buttons
+ * @link http://www.tumblr.com/buttons
  */
 if($tumblr){ ?>
 <li class="tumblr">
@@ -60,17 +60,17 @@ if($tumblr){ ?>
 
 /**
  * Pin It button from Pinterest
- * get another code: http://business.pinterest.com/widget-builder/#do_pin_it_button
+ * @link https://developers.pinterest.com/tools/widget-builder/
  */
 if($pinterest){ ?>
 <li class="pinterest">
-<a href="//pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+<a data-pin-do="buttonBookmark" data-pin-lang="<?php echo h($language); ?>" data-pin-save="true" href="//pinterest.com/pin/create/button/"></a>
 </li><?php
 }
 
 /**
  * Share Button from LinkedIn
- * get another code: http://developer.linkedin.com/plugins/share-plugin-generator
+ * @link https://developer.linkedin.com/plugins/share
  */
 if($linkedin){ ?>
 <li class="linkedin">
@@ -80,7 +80,7 @@ if($linkedin){ ?>
 
 /**
  * Pocket Button from Pocket
- * get another code: http://getpocket.com/publisher/button
+ * @link http://getpocket.com/publisher/button
  */
 if($pocket){ ?>
 <li class="pocket">
@@ -90,11 +90,11 @@ if($pocket){ ?>
 
 /**
  * Send to LINE Button from LINE
- * get another code: http://media.line.me/howto/en/
+ * @link http://media.line.me/howto/en/
  */
 if($line){ ?>
 <li class="line">
-<span><script type="text/javascript">new media_line_me.LineButton({"pc":false,"lang":"<?php echo h($language); ?>","type":"a","text":"<?php echo h($url); ?>","withUrl":true});</script></span>
+<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="<?php echo h($language); ?>"></div>
 </li><?php
 }
 

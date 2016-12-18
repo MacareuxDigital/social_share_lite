@@ -86,35 +86,32 @@ class Controller extends BlockController
                 if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
             }
             $this->addFooterItem('<div id="fb-root"></div>');
-            $this->addFooterItem($this->script('//connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v2.5'.$app_id,'facebook-jssdk'));
+            $this->addFooterItem($this->script('//connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v2.5'.$app_id));
         }
         
         // Twitter widgets.js
         if($this->tweet){
-            $this->addFooterItem($this->script('https://platform.twitter.com/widgets.js','twitter-wjs'));
+            $this->addFooterItem($this->script('https://platform.twitter.com/widgets.js'));
         }
         
         // Google plugone.js
         if($this->gplus){
-            $this->addFooterItem('<script type="text/javascript">
-  window.___gcfg = {lang: "' . $th->specialchars(Localization::activeLanguage()) . '"};
-</script>');
-            $this->addFooterItem($this->script('https://apis.google.com/js/plusone.js','google-plusone'));
+            $this->addFooterItem($this->script('https://apis.google.com/js/platform.js', "{lang: 'ja'}"));
         }
         
         // Hatena bookmark_button.js
         if($this->bhatena){
-            $this->addFooterItem($this->script('https://b.st-hatena.com/js/bookmark_button.js','hatena-bookmark'));
+            $this->addFooterItem($this->script('https://b.st-hatena.com/js/bookmark_button.js'));
         }
         
         // Tumblr share.js
         if($this->tumblr){
-            $this->addFooterItem($this->script('https://secure.assets.tumblr.com/share-button.js','tumblr'));
+            $this->addFooterItem($this->script('https://secure.assets.tumblr.com/share-button.js'));
         }
         
         // Pinterest pinit.js
         if($this->pinterest){
-            $this->addFooterItem($this->script('//assets.pinterest.com/js/pinit.js','pinit'));
+            $this->addFooterItem($this->script('//assets.pinterest.com/js/pinit.js'));
         }
         
         // Linkedin in.js
@@ -126,21 +123,20 @@ class Controller extends BlockController
         
         // Pocket btn.js
         if($this->pocket){
-            $this->addFooterItem($this->script('https://widgets.getpocket.com/v1/j/btn.js?v=1','pocket-btn-js'));
+            $this->addFooterItem($this->script('https://widgets.getpocket.com/v1/j/btn.js?v=1'));
         }
         
         // LINE
         if($this->line){
-            $html = Core::make('helper/html');
-            $this->addHeaderItem($html->javascript('//media.line.me/js/line-button.js?v=20140411'));
+            $this->addFooterItem($this->script('//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js'));
         }
         
         $this->addFooterItem('<!-- load social scripts by social share lite add-on -->');
     }
     
-    protected function script($src,$handle)
+    protected function script($src, $body = false)
     {
-        return '<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="'.$src.'";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","'.$handle.'");</script>';
+        return sprintf('<script async defer src="%s">%s</script>', $src, $body);
     }
 
 }
