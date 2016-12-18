@@ -1,6 +1,6 @@
 # Social Share Lite
 
-![icon](https://raw.github.com/hissy/c5_social_share_lite/master/social_share_lite/icon.png)  
+![icon](https://raw.github.com/hissy/c5_social_share_lite/master/icon.png)  
 Add social sharing buttons to your concrete5 site.
 
 ## Features
