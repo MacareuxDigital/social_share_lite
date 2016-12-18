@@ -26,7 +26,7 @@ Add social sharing buttons to your concrete5 site.
 
 ```bash
 $ cd ./packages
-$ git clone git@github.com:hissy/social_share_lite.git
+$ git clone git@github.com:hissy/social_share_lite.git social_share_lite
 $ cd ../
 $ ./concrete/bin/concrete5 c5:package-install social_share_lite
 ```
