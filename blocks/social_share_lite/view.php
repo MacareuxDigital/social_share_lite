@@ -14,7 +14,7 @@ echo '<ul>';
  */
 if($fblike){ ?>
 <li class="fblike">
-<div class="fb-share-button" data-href="<?php echo h($url); ?>" data-layout="button_count"></div>
+<div class="fb-share-button" data-href="<?php echo h($url); ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"></div>
 </li><?php
 }
 
