@@ -34,7 +34,7 @@ if($tweet){ ?>
  */
 if($bhatena){ ?>
 <li class="bhatena">
-<a href="http://b.hatena.ne.jp/entry/<?php echo h($url); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="<?php echo h($language); ?>" title="<?php echo t('Add this entry to hatena bookmark');?>"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="<?php echo t('Add this entry to hatena bookmark');?>" width="20" height="20" style="border: none;" /></a>
+<a href="https://b.hatena.ne.jp/entry/<?php echo h($url); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="<?php echo h($language); ?>" title="<?php echo t('Add this entry to hatena bookmark');?>"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="<?php echo t('Add this entry to hatena bookmark');?>" width="20" height="20" style="border: none;" /></a>
 </li><?php
 }
 
