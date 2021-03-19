@@ -94,7 +94,7 @@ if($pocket){ ?>
  */
 if($line){ ?>
 <li class="line">
-<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="<?php echo h($language); ?>"></div>
+<div class="line-it-button" data-lang="<?php echo h($language); ?>" data-type="share-a" data-ver="3" data-url="<?php echo h($url); ?>" data-color="default" data-size="small" data-count="true" style="display: none;"></div>
 </li><?php
 }
 
