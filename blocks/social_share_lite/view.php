@@ -29,16 +29,6 @@ if($tweet){ ?>
 }
 
 /**
- * Google plus Button from Google
- * @link https://developers.google.com/+/web/+1button/
- */
-if($gplus){ ?>
-<li class="gplus">
-<div class="g-plusone" data-size="medium" data-href="<?php echo h($url); ?>"></div>
-</li><?php
-}
-
-/**
  * Hatena bookmark Button from Hatena
  * @link http://b.hatena.ne.jp/guide/bbutton
  */

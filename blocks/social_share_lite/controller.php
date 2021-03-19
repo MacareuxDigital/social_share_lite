@@ -94,11 +94,6 @@ class Controller extends BlockController
             $this->addFooterItem($this->script('https://platform.twitter.com/widgets.js'));
         }
         
-        // Google plugone.js
-        if($this->gplus){
-            $this->addFooterItem($this->script('https://apis.google.com/js/platform.js', "{lang: 'ja'}"));
-        }
-        
         // Hatena bookmark_button.js
         if($this->bhatena){
             $this->addFooterItem($this->script('https://b.st-hatena.com/js/bookmark_button.js'));
