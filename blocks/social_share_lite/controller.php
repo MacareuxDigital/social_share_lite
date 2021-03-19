@@ -86,17 +86,12 @@ class Controller extends BlockController
                 if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
             }
             $this->addFooterItem('<div id="fb-root"></div>');
-            $this->addFooterItem($this->script('//connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v2.8'.$app_id));
+            $this->addFooterItem($this->script('https://connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v10.0'.$app_id));
         }
         
         // Twitter widgets.js
         if($this->tweet){
             $this->addFooterItem($this->script('https://platform.twitter.com/widgets.js'));
-        }
-        
-        // Google plugone.js
-        if($this->gplus){
-            $this->addFooterItem($this->script('https://apis.google.com/js/platform.js', "{lang: 'ja'}"));
         }
         
         // Hatena bookmark_button.js
@@ -106,7 +101,7 @@ class Controller extends BlockController
         
         // Tumblr share.js
         if($this->tumblr){
-            $this->addFooterItem($this->script('https://secure.assets.tumblr.com/share-button.js'));
+            $this->addFooterItem($this->script('https://assets.tumblr.com/share-button.js'));
         }
         
         // Pinterest pinit.js

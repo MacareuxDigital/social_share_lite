@@ -15,12 +15,6 @@
     </div>
     <div class="checkbox">
         <label>
-            <?php echo $form->checkbox('gplus', 1, $gplus); ?>
-            <?php echo t("Google+'s plus one"); ?>
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
             <?php echo $form->checkbox('bhatena', 1, $bhatena); ?>
             <?php echo t('Hatena bookmark'); ?>
         </label>
