@@ -101,7 +101,7 @@ class Controller extends BlockController
         
         // Tumblr share.js
         if($this->tumblr){
-            $this->addFooterItem($this->script('https://secure.assets.tumblr.com/share-button.js'));
+            $this->addFooterItem($this->script('https://assets.tumblr.com/share-button.js'));
         }
         
         // Pinterest pinit.js
