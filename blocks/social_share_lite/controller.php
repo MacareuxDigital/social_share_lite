@@ -128,7 +128,7 @@ class Controller extends BlockController
         
         // LINE
         if($this->line){
-            $this->addFooterItem($this->script('//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js'));
+            $this->addFooterItem($this->script('https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js'));
         }
         
         $this->addFooterItem('<!-- load social scripts by social share lite add-on -->');

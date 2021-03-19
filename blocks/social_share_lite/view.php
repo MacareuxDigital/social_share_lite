@@ -95,7 +95,6 @@ if($pocket){ ?>
 if($line){ ?>
 <li class="line">
 <div class="line-it-button" data-lang="<?php echo h($language); ?>" data-type="share-a" data-ver="3" data-url="<?php echo h($url); ?>" data-color="default" data-size="small" data-count="true" style="display: none;"></div>
-<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 </li><?php
 }
 
