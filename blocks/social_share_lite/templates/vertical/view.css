@@ -1,0 +1,10 @@
+.ccm-social-vertical { display: flex; flex-direction: column; list-style: none;}
+ul.ccm-social-vertical { padding: 0; }
+.ccm-social-vertical li.fblike { margin-bottom: 9px; }
+.ccm-social-vertical li.tweet { margin-bottom: 3px; }
+.ccm-social-vertical li.bhatena { margin-bottom: 4px; }
+.ccm-social-vertical li.tumblr { margin-bottom: 1px; }
+.ccm-social-vertical li.pinterest { margin-bottom: 1px; }
+.ccm-social-vertical li.linkedin { margin-bottom: 8px; }
+.ccm-social-vertical li.pocket { margin-bottom: 1px; }
+.ccm-social-vertical li.line { margin-bottom: 1px; }
