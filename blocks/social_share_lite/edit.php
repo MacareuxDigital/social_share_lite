@@ -4,7 +4,7 @@
     <div class="checkbox">
         <label>
             <?php echo $form->checkbox('fblike', 1, $fblike); ?>
-            <?php echo t("Facebook's Like"); ?>
+            <?php echo t("Facebook's Share"); ?>
         </label>
     </div>
     <div class="checkbox">
