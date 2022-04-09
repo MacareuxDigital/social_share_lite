@@ -1,4 +1,15 @@
-<?php   defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php
+defined('C5_EXECUTE') or die("Access Denied.");
+
+$fblike = isset($fblike) ? $fblike : null;
+$tweet = isset($tweet) ? $tweet : null;
+$bhatena = isset($bhatena) ? $bhatena : null;
+$tumblr = isset($tumblr) ? $tumblr : null;
+$pinterest = isset($pinterest) ? $pinterest : null;
+$linkedin = isset($linkedin) ? $linkedin : null;
+$pocket = isset($pocket) ? $pocket : null;
+$line = isset($line) ? $line : null;
+?>
 <fieldset>
     <legend><?php  echo t('Select to display.'); ?></legend>
     <div class="checkbox">
