@@ -9,7 +9,7 @@ class Controller extends \Concrete\Core\Package\Package
 {
     protected $pkgHandle = 'social_share_lite';
     protected $appVersionRequired = '5.7.2.1';
-    protected $pkgVersion = '2.1.5';
+    protected $pkgVersion = '2.1.6';
     
     public function getPackageDescription()
     {
