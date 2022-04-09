@@ -9,7 +9,7 @@ echo '<div class="ccm-social-share">';
 echo '<ul class="ccm-social-vertical">';
 
 /**
- * Like Button from Facebook
+ * Share Button from Facebook
  * @link https://developers.facebook.com/docs/plugins/share-button
  */
 if($fblike){ ?>
@@ -39,7 +39,7 @@ if($bhatena){ ?>
 }
 
 /**
- * Share Button from Tumblr
+ * Post Button from Tumblr
  * @link http://www.tumblr.com/buttons
  */
 if($tumblr){ ?>
@@ -49,7 +49,7 @@ if($tumblr){ ?>
 }
 
 /**
- * Pin It button from Pinterest
+ * Save button from Pinterest
  * @link https://developers.pinterest.com/tools/widget-builder/
  */
 if($pinterest){ ?>
