@@ -82,11 +82,23 @@ class Controller extends BlockController
             $app_id = '';
             $pkg = Package::getByHandle('open_graph_tags_lite');
             if($pkg){
-                $fb_admin = $pkg->getConfig()->get('concrete.ogp.fb_app_id');
-                if($fb_admin) $app_id = '&appID='.$th->specialchars($fb_admin);
+                $app_id = $th->specialchars($pkg->getConfig()->get('concrete.ogp.fb_app_id', ''));
             }
             $this->addFooterItem('<div id="fb-root"></div>');
-            $this->addFooterItem($this->script('https://connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v10.0'.$app_id));
+            $fbInitScript = <<<SDK
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '$app_id',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v16.0'
+    });
+  };
+</script>
+SDK;
+            $this->addFooterItem($fbInitScript);
+            $this->addFooterItem($this->script('https://connect.facebook.net/'.Localization::activeLocale().'/sdk.js'));
         }
         
         // Twitter widgets.js
