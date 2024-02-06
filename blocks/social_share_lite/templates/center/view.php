@@ -51,11 +51,11 @@ if ($page->isEditMode()) { ?>
         if (strpos($url, 'http://') === 0) {
             $hatenaUrl = 'https://b.hatena.ne.jp/entry/' . str_replace('http://', '', $url);
         } else {
-            $hatenaUrl = 'https://b.hatena.ne.jp/entry/s' . str_replace('https://', '', $url);
+            $hatenaUrl = 'https://b.hatena.ne.jp/entry/s/' . str_replace('https://', '', $url);
         }
         ?>
         <li class="bhatena">
-        <a href="https://b.hatena.ne.jp/entry/<?php echo h($hatenaUrl); ?>" class="hatena-bookmark-button"
+        <a href="<?php echo h($hatenaUrl); ?>" class="hatena-bookmark-button"
            data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="<?php echo h($language); ?>"
            title="<?php echo t('Add this entry to hatena bookmark'); ?>"><img
                     src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
