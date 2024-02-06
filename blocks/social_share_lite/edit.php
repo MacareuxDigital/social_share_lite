@@ -9,6 +9,7 @@ $pinterest = isset($pinterest) ? $pinterest : null;
 $linkedin = isset($linkedin) ? $linkedin : null;
 $pocket = isset($pocket) ? $pocket : null;
 $line = isset($line) ? $line : null;
+$note = isset($note) ? $note : null;
 ?>
 <fieldset>
     <legend><?php  echo t('Select to display.'); ?></legend>
@@ -21,7 +22,7 @@ $line = isset($line) ? $line : null;
     <div class="checkbox">
         <label>
             <?php echo $form->checkbox('tweet', 1, $tweet); ?>
-            <?php echo t("Twitter's Tweet"); ?>
+            <?php echo t("X's Post"); ?>
         </label>
     </div>
     <div class="checkbox">
@@ -58,6 +59,12 @@ $line = isset($line) ? $line : null;
         <label>
             <?php echo $form->checkbox('line', 1, $line); ?>
             <?php echo t('LINE Button'); ?>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <?php echo $form->checkbox('note', 1, $note); ?>
+            <?php echo t('note Button'); ?>
         </label>
     </div>
 </fieldset>

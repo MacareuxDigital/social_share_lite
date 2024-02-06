@@ -1,0 +1,8 @@
+.ccm-social-share {margin: 10px 0;}
+.ccm-social-share ul.ccm-social-center {display: flex; flex-wrap: wrap; line-height: 1; justify-content: center}
+.ccm-social-share ul, .ccm-social-share ul li > span, .ccm-social-share ul li > a {margin: 0 !important; padding: 0 !important; float: none !important;}
+.ccm-social-share li {margin: 0 5px 5px 0; list-style: none !important;}
+.ccm-social-share .pocket-btn {display: inline-block; vertical-align: top !important;}
+.ccm-social-share .fb_iframe_widget {width: auto !important; display: inline-block !important;}
+.ccm-social-share .fb_iframe_widget > span {vertical-align: baseline !important;}
+.ccm-social-share .pinterest > span {vertical-align: super !important;}

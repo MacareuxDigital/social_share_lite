@@ -2,10 +2,9 @@
 namespace Concrete\Package\SocialShareLite\Block\SocialShareLite;
 
 use Concrete\Core\Block\BlockController;
-use Package;
-use Core;
-use Page;
-use Localization;
+use Concrete\Core\Localization\Localization;
+use Concrete\Core\Package\PackageService;
+use Concrete\Core\Page\Page;
 
 class Controller extends BlockController
 {
@@ -18,6 +17,16 @@ class Controller extends BlockController
     protected $btCacheBlockOutputOnPost = true;
     protected $btCacheBlockOutputForRegisteredUsers = false;
     protected $btCacheBlockOutputLifetime = 0; //until manually updated or cleared
+
+    protected $fblike;
+    protected $tweet;
+    protected $bhatena;
+    protected $tumblr;
+    protected $pinterest;
+    protected $linkedin;
+    protected $pocket;
+    protected $line;
+    protected $note;
     
     public function getBlockTypeDescription()
     {
@@ -32,14 +41,16 @@ class Controller extends BlockController
     public function view()
     {
         // Get Open Graph Tags Lite settings
-        $pkg = Package::getByHandle('open_graph_tags_lite');
+        /** @var PackageService $packageService */
+        $packageService = $this->app->make(PackageService::class);
+        $pkg = $packageService->getClass('open_graph_tags_lite');
         if($pkg){
             $twitter_site = $pkg->getConfig()->get('concrete.ogp.twitter_site');
             $this->set('twitter_site',$twitter_site);
             $this->set('ogt',$pkg);
         }
         
-        $nh = Core::make('helper/navigation');
+        $nh = $this->app->make('helper/navigation');
         $this->set('nh',$nh);
         
         $page = Page::getCurrentPage();
@@ -63,14 +74,16 @@ class Controller extends BlockController
         $args['linkedin'] = empty($args['linkedin']) ? 0 : 1;
         $args['pocket'] = empty($args['pocket']) ? 0 : 1;
         $args['line'] = empty($args['line']) ? 0 : 1;
+        $args['note'] = empty($args['note']) ? 0 : 1;
         parent::save($args);
     }
     
     public function on_page_view()
     {
-        $th = Core::make('helper/text');
-        
-        $pkg = Package::getByHandle('social_share_lite');
+        $th = $this->app->make('helper/text');
+
+        $packageService = $this->app->make(PackageService::class);
+        $pkg = $packageService->getClass('social_share_lite');
         $disable_scripts = $pkg->getConfig()->get('concrete.sharing.disable_scripts');
         if ($disable_scripts) {
             return;
@@ -80,25 +93,12 @@ class Controller extends BlockController
         if($this->fblike){
             // Get Open Graph Tags Lite settings
             $app_id = '';
-            $pkg = Package::getByHandle('open_graph_tags_lite');
+            $pkg = $packageService->getClass('open_graph_tags_lite');
             if($pkg){
                 $app_id = $th->specialchars($pkg->getConfig()->get('concrete.ogp.fb_app_id', ''));
             }
             $this->addFooterItem('<div id="fb-root"></div>');
-            $fbInitScript = <<<SDK
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '$app_id',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v16.0'
-    });
-  };
-</script>
-SDK;
-            $this->addFooterItem($fbInitScript);
-            $this->addFooterItem($this->script('https://connect.facebook.net/'.Localization::activeLocale().'/sdk.js'));
+            $this->addFooterItem($this->script('https://connect.facebook.net/'.Localization::activeLocale().'/sdk.js#xfbml=1&version=v19.0'));
         }
         
         // Twitter widgets.js
@@ -136,6 +136,10 @@ SDK;
         // LINE
         if($this->line){
             $this->addFooterItem($this->script('https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js'));
+        }
+
+        if ($this->note) {
+            $this->addFooterItem($this->script('https://cdn.st-note.com/js/social_button.min.js'));
         }
         
         $this->addFooterItem('<!-- load social scripts by social share lite add-on -->');

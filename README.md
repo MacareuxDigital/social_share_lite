@@ -14,13 +14,13 @@ Add social sharing buttons to your concrete5 site.
 
 * Facebook Like
 * Twitter Tweet
-* Google plus one
 * Hatena Bookmark (famous social bookmarking service in Japan)
 * Tumblr Share
 * Pinterest Pin it
 * LinkedIn Share
 * Pocket button
 * LINE (famous social network service in Asia)
+* note (famous blogging service in Japan)
 
 ## Install
 

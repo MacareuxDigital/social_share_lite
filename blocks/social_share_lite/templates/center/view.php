@@ -17,7 +17,7 @@ if ($page->isEditMode()) { ?>
 } else {
 
     echo '<div class="ccm-social-share">';
-    echo '<ul>';
+    echo '<ul class="ccm-social-center">';
 
     /**
      * Share Button from Facebook

@@ -20,7 +20,7 @@
 						<span><?php echo t('Do not add scripts of social network api automatically.') ?></span>
 					</label>
 				</div>
-				<span class="help-block"><?php echo t("If you want to load javascript files (Twitter widgets.js or Google plusone.js) into your theme manually, please choose second option."); ?></span>
+				<span class="help-block"><?php echo t("If you want to load javascript files (like Facebook's sdk.js or X's widgets.js etc) into your theme manually, please choose second option."); ?></span>
 			</div>
 		</div>
 	</fieldset>

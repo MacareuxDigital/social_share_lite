@@ -1,15 +1,24 @@
-<?xml version="1.0"?>
-<schema version="0.3">
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+		xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 https://concretecms.github.io/doctrine-xml/doctrine-xml-0.5.xsd"
+>
+
 	<table name="btSocialShareLite">
-		<field name="bID" type="I"><key /><unsigned /></field>
-		<field name="fblike" type="I1" ></field>
-		<field name="tweet" type="I1" ></field>
-		<field name="gplus" type="I1" ></field>
-		<field name="bhatena" type="I1" ></field>
-		<field name="tumblr" type="I1" ></field>
-		<field name="pinterest" type="I1" ></field>
-		<field name="linkedin" type="I1" ></field>
-		<field name="pocket" type="I1" ></field>
-		<field name="line" type="I1" ></field>
+		<field name="bID" type="integer">
+			<unsigned/>
+			<key/>
+		</field>
+		<field name="fblike" type="boolean"/>
+		<field name="tweet" type="boolean"/>
+		<field name="bhatena" type="boolean"/>
+		<field name="tumblr" type="boolean"/>
+		<field name="pinterest" type="boolean"/>
+		<field name="linkedin" type="boolean"/>
+		<field name="pocket" type="boolean"/>
+		<field name="line" type="boolean"/>
+		<field name="note" type="boolean"/>
 	</table>
+
 </schema>
